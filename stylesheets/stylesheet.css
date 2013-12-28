@@ -337,6 +337,59 @@ footer a:hover {
 * html .clearfix {height: 1%;}
 .clearfix {display: block;}
 
+
+
+
+#menu ul li {
+ list-style-type: none;  
+}  
+ 
+ #menu ul ul {
+   display:none;
+   position: fixed;
+}
+
+ #menu ul ul a {
+}
+
+ #menu ul a {
+  text-decoration: none;
+  color: black;
+}
+
+#menu ul li:hover ul {
+  display:block;
+  left: 0;  
+  line-height: 20px;
+  width: 170px;
+  height: 400px;
+  background: #CCC;
+  border-top-right-radius:1em;
+  border-bottom-right-radius:1em;
+  padding-left: 22px;
+  text-align: left;
+  line-height: 35px;
+  padding-top:20px;
+  font-size: 14px;
+}
+
+ #menu-wrap {
+   position:fixed;
+   top:50px;
+   width: 52px;
+   height: 22px;
+   border-top-right-radius: 6px;
+   border-bottom-right-radius:6px;
+   background: rgba(181,181,181,0.5);
+   text-align: center;
+   padding-top: 3px;
+   z-index: 0;   
+}
+
+
+
+
+
 /* #Media Queries
 ================================================== */
 
