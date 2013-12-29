@@ -10,7 +10,7 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>Moonlightcoffee by speritzl9001</title>
+    <title>Moonlightcoffee</title>
   </head>
 
   <body>
@@ -18,17 +18,471 @@
     <div id="header"></div>
     <div id="content-wrapper">
         <div id="content">
-            <h1>Title</h1>&nbsp
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p><br>
-
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p><br>
-
-            <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.</p><br>
+        <h1>GTK+ with CSS</h1>
+			<p>Starting with version 3, GTK uses CSS3 for styling and although it's a subset of the CSS3 standard so not everything is supported, you can use it to greatly improve the styling of your applications.</p>
+		
+			
+            <span class="anchor" id="CSS"></span>
             
-<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p><br>            
+            <p><b>CSS</b> (Cascading Style Sheets), are used to style documents written in languages for web content creation such as HTML, XHTML, SVG, XUL, ect.
+             The current version is CSS3 and is maintained by the W3C, (World Wide Web Consortium)
+            </p>
+            <blockquote>CSS is designed primarily to enable the separation of document content (written in HTML or a similar markup language) from document presentation,
+             including elements such as the layout, colors, and fonts.</blockquote>
+            </p>
+            <p>
+            <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">http://en.wikipedia.org/wiki/Cascading_Style_Sheets</a>
+            </p>		
 
+  	         <span class="anchor" id="Internal versus external CSS"></span>
+            <h3>Internal versus external CSS</h3>
+            <p>There are two types of CSS, internal and external. With internal the CSS is defined in the code file.
+            With external the CSS is in a separate file also called a style sheet.
+            The style sheet version goes along with the idea of separating the content of the document from it's styling.
+            You can use either. This first example will be internal.</p>
+            
+            <p>
+            The standard for CSS is to include one property per line for clarity and editing capability.
+            So including CSS in your code can cause it to grow quickly especially if you have several things you want to style differently.
+            One of the benefits of using a style sheet is that it keeps your code file as small as possible.
+            Another benefit is that once you've created your content in the code file and compiled it, you don't need to recompile it after making changes
+            in the style sheet. Just save the new version of the style sheet and run the program again. The code file will read any changes in the style sheet.
+            This also lets other people make changes in the style sheet to create a custom look.
+            They don't need to know C language or Python or whatever programming language you made your code file with only a little CSS.
+            Of course if you don't want anyone to change the look of your program you should use internal CSS.
+            However they can still change the theme on their computer (see below) which can affect how parts of your program will look.
+            </p>
+            
+            <span class="anchor" id="Styling versus. Theming"></span>
+            <h3>Styling versus. Theming</h3>           
+            <p>The Linux operating system has many versions, called distributions or "distros" for short. Ubuntu; Debian, Mint. ect.
+            These distros each have many revisions and codenames.<br>            
+            <a href="https://wiki.ubuntu.com/DevelopmentCodeNames">https://wiki.ubuntu.com/DevelopmentCodeNames</a><br>
+            <a href="http://wiki.debian.org/DebianReleases#Release_statistics">http://wiki.debian.org/DebianReleases#Release_statistics</a><br>
+            </p>
+            
+            <p>
+            Each can look quite different than the others. The Window Manager is the part of the operating system that has the finally say in what anything
+            on the screen will look like. The Window Manager works by reading a piece of code and a CSS file.
+            The CSS file contains information about the visually aspects such as colors, some shapes ect.
+            The distros that I mentioned before each come with predefined "Themes".
+            These can be changed by selecting a different one through a simple user setting. 
+            </p>
+            
+            <span class="anchor" id="Theming"></span>
+            <h4>Theming</h4>
+            <p>
+            When "Theming" you create your own CSS file and some code.
+            The code instructs the Window Manger to read the CSS file and all the programs running on the computer will obey the rules in the CSS file.
+            That is, they will use the colors and other visual properties that were written in the CSS file.
+            Here your not creating any new programs. You're simply telling the existing programs how they should look.
+            </p>
+            
+            <p>
+            The developers of Linux's idea is that you will not write a program which changes the theme of the operating system just so that
+            your program looks the way you want. Instead the idea is to have a universal look to any program that runs on the system.
+            This creates a familiar and user friendly interface. An exception would be a program that runs on a very specialized computer
+            called and embedded system. These are usually lower speed computers used for specific purposes sometimes in industrial settings.
+            They usually do not run a operating system capable of displaying graphics at all or very low quality ones.
+            Recent advances in computer chips called SOC's (system on a chip) are changing things dramatically.
+            Their being used for such applications as tablet computers, set-top boxes (Netflix on your TV) and energy monitoring (Plug-in electric cars).
+            The prices of these chips is falling rapidly and their speed and ability to run full operating systems with graphics capability is increasing.
+            One such system is the very low cost, very popular, Raspberry Pi computer.
+            It's a small computer designed for Computer Science students and hobbyist programmers.<br>
+            <a href="http://www.raspberrypi.org/">http://www.raspberrypi.org/</a>
+            </p>    
+            
+            <p>
+            Theming won't be covered in this tutorial, maybe in the future. If you want to get more information about theming see:<br>
+            <a href="http://worldofgnome.org/making-gtk3-themes-part-1-basics/">http://worldofgnome.org/making-gtk3-themes-part-1-basics/</a><br>
+            <a href="http://www.devart.com">http://www.devart.com</a><br>            
+            However if you're programming on a embedded system, GTK has a method for you to create your own theme, GtkThemingEngine:<br>
+            <a href="http://developer.gnome.org/gtk3/stable/GtkThemingEngine.html">http://developer.gnome.org/gtk3/stable/GtkThemingEngine.html</a>            
+            </p>
+            
+            <span class="anchor" id="Styling"></span>
+            <h4>Styling</h4>            
+            <p>
+            Styling is when you use the new CSS capabilities in GTK3 to control some of the visual aspects of programs that YOU write.
+            Any programs on the computer that you did not write won't be affected.
+            Those other programs will obey the theme the Window Manger gives them.
+            I said some of the visual aspects... because not all of the properties can be changed.
+            Even some of the properties that you do change can be overridden by the Window Manger. (not many)
+            </p>
+            
+			<div id=section_divider></div>
+			
+            <span class="anchor" id="Colors"></span>            
+            <h3>Colors</h3> 
+            <p>
+            Gtk with CSS supports several ways to use colors, called color units.
+            The units are: Basic color keywords, X11 extended, RGB, RGBA and hexadecimal.
+            The simplest are the basic color keywords such as: red, blue, green ect. (*note)
+            See: <b>4.1. Basic color keywords</b> <a href="http://www.w3.org/TR/css3-color/#html4">http://www.w3.org/TR/css3-color/#html4</a><br>            
+            *Note: For the following colors you must use either RGB, RGBA or hexadecimal: &nbsp <code>aqua, fuchsia, lime, silver, olive, teal.</code>            
+            </p>
+            
+            <p>
+            Gtk also supports all of the X11 extended color units (**See Note)
+            No named color can contain spaces. Some X11 colors listed on Wikipedia and other sites contain spaces.
+            They won't work. You need to remove any spaces or use one of the other color units listed below.
+            Color names which have more then one word in them can have any combination of upper and lower case letters but can't contain spaces.
+            For instance: <code>Cadet Blue</code> can be written as any of the following:</p>
+			
+			<div class="CodeBox">
+  <pre class="LineNumbers">
+1
+2
+3
+4
+5
+6</pre><pre class="Source">
+CadetBlue
+cadetblue
+cadetBlue
+Cadetblue
+CADETBLUE
+CadETBLuE
+</pre>
+</div>
+            <p>See: <b>4.3. Extended color keywords</b> <a href="http://www.w3.org/TR/css3-color/#svg-color">http://www.w3.org/TR/css3-color/#svg-color</a>            
+            </p>
+            
+            <span class="anchor" id="RGB"></span>
+            <h4>RGB</h4>             
+            <p>            
+            One of the most used color units is RGB, which stand for: red, green, and blue. The values can be either integers between 0 and 255 or percentages.<br>
+            Examples:</p>
+<div class="CodeBox">
+<pre class="LineNumbers">
+1
+2</pre><pre class="Source">
+rgb (0, 0, 255);		
+rgb (20%, 30%, 0%); 
+</pre>
+</div>
+
+            <span class="anchor" id="RGBA"></span>
+            <h4>RGBA</h4>
+            <p>You can also use RGBA. The "A" in RGBA means "Alpha" which is another way of saying transparency.</p>
+
+
+            <span class="anchor" id="Hexidecimal"></span>
+            <h4>Hexidecimal</h4>
+            <p>See: <b>Hex triplet</b> <a href="http://en.wikipedia.org/wiki/Web_colors">http://en.wikipedia.org/wiki/Web_colors</a></p>
+
+            <span class="anchor" id="Getting the color values"></span>
+            <h4>Getting the color values</h4>            
+            <p>            
+            You can use online "color pickers" as well as almost any image manipulation program to get these colors.
+            I recommend Inkscape since it supports RGBA, it's free and works on Linux, Mac and Windows.
+            For the full list of color units and more examples, See: <b>The various ways to express colors in GTK+ CSS are:</b><br>
+            <a href="http://developer.gnome.org/gtk3/stable/GtkCssProvider.html">http://developer.gnome.org/gtk3/stable/GtkCssProvider.html</a>
+             (same for all version of Gtk3)
+            </p>            
+            
+            <span class="anchor" id="Color Gradients"></span>
+            <h4>Color Gradients</h4>     
+            <p>
+            Gtk also allows you to create a color gradient. A color gradient is color that progress from one color to another.
+            There are two types of color gradients: linear and radial. The syntax for linear gradient is:</p>
+			
+<div class="CodeBox">
+<pre class="LineNumbers">
+1
+2
+3
+4</pre><pre class="Source">
+-gtk-gradient (linear,
+               start_x, start_y, end_x end_y,
+               color-stop (position, color),
+...)
+</pre>
+</div>
+ 
+    <p><code>start_x, start_y</code> &nbsp Are either a floating point number between 0 and 1 or one of the special values 'left', 'right' or 'center'<br>
+    <code>end_x, end_y</code> &nbsp Are either a floating point number between 0 and 1 or one of the special values <code>'top'</code>, <code>'bottom'</code> or <code>'center'</code><br>    
+    <code>position:</code> &nbsp A floating point number between 0 and 1 and color is a color expression.<br>
+    <code>color-stop</code>, &nbsp Can be repeated multiple times to add more than one color stop.<br>
+    <code>'from (color)'</code> and <code>'to (color)'</code> can be used as abbreviations for color stops with position 0 and 1, respectively.</p>
+
+	   <p>
+	   The syntax for CSS3 linear gradients differs slightly between web browsers and color-stop for GTK+ follows the CSS model for the Safari web browser except,
+	   <code>position</code> is given as a decimal instead of percent:
+	   <code>color-stop(0.50, blue)</code>
+       Means the gradient should gradually fade from the previous color to blue. It finally becomes the color blue at the point 50% of the width's container.
+	   If you defined this external css gradient
+       (for Unico on Ubuntu, See the section: <a href="#Compatibility Notes">Compatibility Notes</a>)	   
+	   </p>	
+	   
+<div class="CodeBox">
+<pre class="LineNumbers">
+1
+2
+3
+4
+5
+6</pre><pre class="Source">
+GtkWindow {
+  background-image: -gtk-gradient (linear,
+  center top, center bottom,
+  color-stop(0.5,green),
+  color-stop(0.5,blue),
+}
+</pre>
+</div>
+		
+	<p>You would get:<br>
+    <img src="/files/theme/50_50.png" alt="top 50% green, bottom 50% blue">
+    </p>   
+   
+    <p>
+    Before you look at the GTK manual example's for gradients, the syntax: <code>@name</code> should be explained.
+    This is used to create a unique name for a color. This is useful because you only need to define the color once then use it as many times as you want.
+    That way you only need to change the definition of the color and everywhere you've used the unique name will reflect the change.
+    For colors you use: <code>@define-color</code>, followed by your own unique name, then a value given in one of the supported color units.
+    For instance, if you were changing the background color you might use the following as your unique name: <code>bg_color1</code>.
+    Once you define it, then you use your unique name with the character <code>@</code> in front of it.
+    A linear gradient for external css, would be created with the following: (See compatibility note for Unico in Ubuntu)   
+    </p>
+	
+<div class="CodeBox">
+<pre class="LineNumbers">
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre><pre class="Source">
+@define-color bg_color1 rgb (255, 0, 0);
+@define-color bg_color2 rgb (71, 71, 229);
+
+GtkWindow {
+  background-image: -gtk-gradient (linear,
+  left top,
+  right bottom,
+  from(@bg_color1),
+  to(@bg_color2));
+} 
+</pre>
+</div>	
+			
+    <p>
+       The quickest, simplest way to get linear gradient color values is to use on-line tools that are available.
+       I've listed some in the references section at the end of this post, or just Google "CSS gradient creator"
+       Copy and paste the Safari web browser version of the code it generates for you.
+       Then just change <code>background</code> to <code>background-image</code> then <code>-webkit-gradient</code> to <code>-gtk-gradient</code> and the percent values to decimal.
+      (See compatibility note for Unico in Ubuntu) For instance you should get something like this:
+   </p>
+   
+<div class="CodeBox">
+<pre class="LineNumbers">
+1
+2
+3
+4
+5
+6
+7
+</pre><pre class="Source">
+background: -webkit-gradient (linear,
+   left top,
+   left bottom,
+   color-stop(0%,#1e5799),
+   color-stop(39%,#2989d8),
+   color-stop(56%,#207cca),
+   color-stop(100%,#7db9e8)); /* Chrome,Safari4+  
+</pre>
+</div>   
+   
+   <p>
+      I won't go into radial gradients. To read about them and more linear gradient examples, See: <b>Gradients</b>
+      <a href="http://developer.gnome.org/gtk3/stable/GtkCssProvider.html">http://developer.gnome.org/gtk3/stable/GtkCssProvider.html</a><br>
+       (same for all version of Gtk3)
+   </p>
+
+   <p>There are four other more complicated color units: <code>mix</code>, <code>shade</code>, <code>lighter</code>, <code>darker</code></p>
+   
+   <span class="anchor" id="mix"></span>
+   
+<div class="CodeBox">
+<pre class="LineNumbers">
+1
+2
+3
+4</pre><pre class="Source">
+mix(color1, color2, f) /* A linear combination of color1 and color2, f is a floating point number between 0 and 1. */                       
+shade(color, f)        /* A lighter or darker variant of color, f is a floating point number */
+lighter(color)         /* A lighter variant of color */
+darker(color)          /* A darker variant of color*/ 
+</pre>
+</div>
+
+   <p><code>mix</code>: "f" is the brightness that I described previously, only in CSS for Gtk, it's a floating point number between 0.0 and 1.0.
+   A value of 0.5 would be 50%, 0.6 would be 60%.</p>
+      
+   <span class="anchor" id="shade"></span>
+   <p>
+   <code>shade</code>: <code>f</code> is the brightness that I described previously, but here it's between 0.0 and 2.0.
+   If you set a color using one of the basic color keywords, say blue, then on the next line use: <code>shade(blue, 1.0)</code> it will not change.
+   But if you set: <code>shade(blue, 0.0)</code> then you'll get black. If you use: <code>shade(blue, 2.0)</code> you'll get white.
+   </p>
+
+   <span class="anchor" id="lighter"></span>
+   <a name="lighter"></a>
+   <p>
+   <code>lighter</code>: If you set the background color using: blue, then use: <code>lighter(blue)</code> it will result in a 30% reduction in the saturation property of the HSV color space.
+   This is equivalent to selecting the Ubuntu appearance settings as rgb: 0,0,255 then changing the "S" property in the HSV settings from 100 to 70.
+   This isn't additive, meaning you can't apply an additional <code>lighter</code> and get even lighter version of the color you started with.
+   </p>
+
+   <span class="anchor" id="darker"></span>
+   <a name="darker"></a>
+   <p>
+   <code>darker</code>: This works opposite of lighter and again, it can't be repeated for even darker versions of your starting color.
+   I won't go into mix, but I will say, lighter, darker and shade can be useful when styling the different states of a button.
+   For instance when you're cursor is over it. 
+   </p>
+
+   <div id="section_divider"></div>
+   
+   <span class="anchor" id="Images"></span>
+   <a name="Images"></a>   
+   <h3>Images:</h3>
+   <p> 
+   You can also use images with CSS. GTK accepts the image types: &nbsp <i>.gif</i> &nbsp <i>.jpeg</i> &nbsp <i>.png</i> &nbsp <i>.svg</i> <br>
+   In the following code just replace the line: &nbsp  <code>" background-color: shade(blue, 1.0);\n"</code><br>
+   With the following: &nbsp <code>" background-image: url(/files/theme/PATH);\n"</code><br>
+   For example once you've created or downloaded your image, lets say I downloaded the GTK cube image at the top of this web page and saved it as GtkCube.svg to a folder called: "Pictures",
+   I would use: &nbsp
+   <code>" background-image: url('/home/me/Pictures/GtkCube.svg');\n"</code> 
+   </p>
+   
+   <p>
+   So you can resize the window to fit the image. By change the line:&nbsp <code>gtk_window_set_default_size(GTK_WINDOW(window), 500, 300);</code><br>
+   To the following: &nbsp <code>gtk_window_set_default_size(GTK_WINDOW(window), 1024, 1024);</code>
+   </p>
+     
+   <div id="section_divider"></div>    
+     
+   <span class="anchor" id="Compatibility Notes"></span>
+   <a name="Compatibility Notes"></a>   
+   <h4>Compatibility Notes:</h4>
+   <p>
+   For Unico, the default GTK3 Theme Engine in Ubuntu 12.04 (Precise Pangolin) or Ubuntu 12.10 (Quantal Quetzal):<br>
+   If your setting the background color or background image of a window, you can use either <code>background</code> or <code>background-image</code>.
+   But when setting the background color of a button, which is in a upcoming tutorial, you must use <code>background</code>.
+   For this reason it's best to be consistent and just use <code>background</code> when setting background colors and background images for all widgets.
+   As of GTK 3.4 you must use units in the CSS (unless the value is zero) or you'll receive the warning:<br>
+   <code>Not using units is deprecated. Assuming 'px'.</code>
+   </p>
+
+   <p>
+   Also there must not be any space between the value and the units or you'll receive the same warning. You can use any of the standard CSS units of measurement: 
+   <a href="http://www.w3schools.com/cssref/css_units.asp">http://www.w3schools.com/cssref/css_units.asp</a><br>  
+   As an example, the code in the following line: &nbsp <code>" padding: 2;\n"</code><br>
+   Would become: &nbsp <code>" padding: 2px;\n"</code>  
+   </p>
+
+  <div id="section_divider"></div>
+
+  <span class="anchor" id="Style Properties"></span>
+  <a name="Style Properities"></a> 
+  <h3>Style Properities: Important</h3>
+  <p>There are two types of style properties. Standard CSS properities and widget specific properties.</p>
+
+  <span class="anchor" id="Standard CSS properties"></span>
+  <a name="Standard CSS properties"></a>
+  <h4>Standard CSS properties</h4>
+  <p>
+  Standard CSS properties are those that follow (generally) the CSS3 standard and are listed in official GTK documentation.
+  Make sure your viewing the manual for the version of gtk YOUR using because there are differences between versions.
+  For instance, gtk version 3.1 introduces several new CSS properities including: "text-shadow"; "box-shadow" and individual border colors.
+  Just change "3.4" in the link below to your version. See: <b>Supported properties</b>:
+  <a href="http://developer.gnome.org/gtk3/3.4/GtkCssProvider.html">http://developer.gnome.org/gtk3/3.4/GtkCssProvider.html</a>  
+  </p>
+  
+  <span class="anchor" id="Widget specific properties"></span>
+  <a name="Widget specific properties"></a>
+  <h4>Widget specific properties</h4>
+  <p>
+  The widget specific properties are those that can be unique to each widget. (GtkButton, GtkComboBox, ect.) Some widgets share these properties.
+  Unless it's a standard CSS property, In order to use the style properties listed in the GTK documentation for a particular widget they must be preceded by: -NameOfWidget-
+  For example to use the GtkCheckButton style property, "indicator-size" you would use: <code>-GtkCheckButton-indicator-size:</code> <i>value</i>
+  Where value is an integer greater then or equal to zero as mentioned in the documentation.
+  </p>
+
+  <p>
+    <ol>
+      <li>Go to the main page of the documentation for the widget your trying to style.</li>
+      <li>Click on the style property you want.</li>
+      <li>In your code use the style property proceeded by -NameOfWidget- as described above.</li>
+     </ol>
+  </p>
+
+  <p>(See the references section at the bottom of this tutorial for links to the official documentation.)</p>
+
+  <div id="section_divider"></div>
+  
+  <span class="anchor" id="Object Hierarchy"></span>
+  <a name="Object Hierarchy"></a>
+  <h3>Object Hierarchy</h3>
+  <p>
+  There's a object hierarchy to everything in GTK. When your at the top of documentation page for the widget your trying to style click on "Object Hierarchy"
+  Anything that falls below GtkWidget in the object hierarchy can be styled with GtkWidget style properties assuming it has that feature.<br>
+  <a href="http://developer.gnome.org/gtk3/stable/GtkWidget.html#GtkWidget.style-properties">http://developer.gnome.org/gtk3/stable/GtkWidget.html#GtkWidget.style-properties</a>  
+  </p>
+
+  <p>
+     Say you want to change the cursor color in a GtkTextView, but if you look at the style properties for GtkTextView there's no such property listed.
+     However if you look at the style properties for GtkWidget there is a <code>cursor-color</code> property listed and since GtkWidget is above GtkTextVew in the hierarchy, you can use that to change the cursor color in GtkTextView with: <code>-GtkWidget-cursor-color</code>.
+     If a widget doesn't have a cursor, like a GtkButton, you're obviously not going to be able to style it. But the property <code>focus-line-width</code> is common to several widgets.
+     It's a indicator line on widgets like buttons which shows there's an area that can be clicked.
+     So if your styling a GtkButton you can change this property by using: &nbsp <code>-GtkWidget-focus-line-width</code>.
+     You don't use: <code>-GtkButton-focus-line-width</code> because <code>focus-line-width</code> is listed in the style properties of GtkWidget not GtkButton.
+     There's an example of the <code>focus-line-width</code> in the sample code below and a example of <code>cursor-color</code> in the GtkTextView tutorial I've posted.
+  </p> 
+  
+  <div id="section_divider"></div>
+  
+  <span class="anchor" id="References"></span>
+  <a name="References"></a> 
+  <h2>References</h2>  
+  <p>
+    <b>Official (gtk3) "Getting Started with GTK+"</b><br> 
+    <a href="http://developer.gnome.org/gtk3/stable/gtk-getting-started.html">http://developer.gnome.org/gtk3/stable/gtk-getting-started.html</a><br>
+    <b>Official GTK+3.x "Tutorials, code samples, and platform demos in C"</b><br>
+    <a href="http://developer.gnome.org/gnome-devel-demos/3.5/c.html.en">http://developer.gnome.org/gnome-devel-demos/3.5/c.html.en</a>
+  </p>
+  
+  <p>
+    <b>Official GTK3 reference manuals online:</b><br>	
+    <a href="http://developer.gnome.org/gtk3/3.0/">http://gtk+-3.0 http://developer.gnome.org/gtk3/3.0/</a><br>	
+    <a href="http://developer.gnome.org/gtk3/3.1/">http://gtk+-3.1 http://developer.gnome.org/gtk3/3.1/</a> &nbsp (introduces several new css properities, "text-shadow", "box-shadow" individual border colors, ect.)<br>	
+    <a href="http://developer.gnome.org/gtk3/3.2/">http://gtk+-3.2 http://developer.gnome.org/gtk3/3.2/</a><br>
+    ...I think you can see the pattern. Just change 3.2 to your version<br>	
+    <a href="http://developer.gnome.org/gtk3/">http://developer.gnome.org/gtk3/</a> &nbsp (gtk3.x series manual downloads for those that prefer offline use.)<br>	
+    "inofficial" and yet experimental doxygen-generated source code documentation. (Downloadable and online)<br>	
+    <a href="http://fossies.org/dox/all.html#G">http://fossies.org/dox/all.html#G</a> &nbsp (search the page for "gtk" to find several versions. This is a Nice resource.)
+  </p>   
+  
+  <p>
+    <b>CSS specific</b><br>
+    <a href="http://gnomejournal.org/article/107/styling-gtk-with-css">http://gnomejournal.org/article/107/styling-gtk-with-css</a><br>
+    <a href="http://blogs.gnome.org/carlosg/2010/08/23/css-like-styling-for-gtk/">http://blogs.gnome.org/carlosg/2010/08/23/css-like-styling-for-gtk/</a><br>
+    <a href="http://kalmbach.wordpress.com/2011/03/12/gtk-3-0-client-side-theme/">http://kalmbach.wordpress.com/2011/03/12/gtk-3-0-client-side-theme/</a><br>
+    <a href="http://developer.gnome.org/gtk3/3.0/migrating.html">http://developer.gnome.org/gtk3/3.0/migrating.html</a><br>  
+    <a href="http://www.w3.org/TR/css3-color/">http://www.w3.org/TR/css3-color/</a><br>
+    <a href="http://maettig.com/?page=PHP/CSS_Color_Converter">http://maettig.com/?page=PHP/CSS_Color_Converter</a> (Very nice online color conversion tool)<br>
+    For quick design of color gradients:<br>
+    <a href="http://www.colorzilla.com/gradient-editor/">http://www.colorzilla.com/gradient-editor/</a><br>
+    <a href="http://gradients.glrzad.com/">http://gradients.glrzad.com/</a><br>
+  </p>
+    &nbsp
         </div><!-- END content -->        
         
 <div id="menu-wrap">
@@ -36,9 +490,27 @@
           <ul>
              <li><a href="#">index</a>
                    <ul>
-                       <li><a href="#">Item one</a></li>
-                       <li><a href="#">Item two</a></li>
-                       <li><a href="#">Item three in the list</a></li>
+                       <li><a href="#CSS">CSS</a></li>
+                       <li><a href="#Internal versus external CSS">Internal versus external CSS</a></li>
+                       <li><a href="#Styling versus. Theming">Styling versus. Theming</a></li>
+                       <li><a href="#Theming">Theming</a></li>
+                       <li><a href="#Styling">Styling</a></li>
+                       <li><a href="#Colors">Colors</a></li>                                              
+                       <li><a href="#RGB">RGB</a></li>                       
+                       <li><a href="#RGBA">RGBA</a></li>                       
+                       <li><a href="#Hexidecimal">Hexidecimal</a></li>                       
+                       <li><a href="#Getting the color values">Getting the color values</a></li>
+                       <li><a href="#Color Gradients">color gradients</a></li>
+                       <li><a href="#mix">mix</a></li>
+                       <li><a href="#shade">shade</a></li>                       
+                       <li><a href="#lighter">lighter</a></li>
+                       <li><a href="#darker">darker</a></li>
+                       <li><a href="#Images">Images</a></li>                       
+                       <li><a href="#Compatibility Notes">Compatibility Notes</a></li>
+                       <li><a href="#Style Properties">Style Properties</a></li>
+                       <li><a href="#Standard CSS properties">Standard CSS properties</a></li>
+                       <li><a href="#Widget specific properties">Widget specific properties</a></li>
+                       <li><a href="#References">References</a></li> 
                    </ul>
               </li>
           </ul>
