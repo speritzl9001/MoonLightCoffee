@@ -21,7 +21,7 @@ h1 {
 }
 
 #content {
-  width: 90%;
+  width: 80%;
   float: right;
   padding-bottom: 50px;
   padding-right: 30px;
@@ -50,7 +50,7 @@ h1 {
   left: 0;  
   line-height: 20px;
   width: 170px;
-  height: 800px;
+  height: 750px;
   background: #CCC;
   border-top-right-radius:1em;
   border-bottom-right-radius:1em;
