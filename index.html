@@ -19,17 +19,16 @@
     <div id="content-wrapper">
         <div id="content">
         <h1>GTK+ with CSS</h1>
-	<p>Starting with version 3, GTK uses CSS3 for styling and although it's a subset of the CSS3 standard so not everything is supported, you can use it to greatly improve the styling of your applications.</p>
-		
-			
+	<p>Starting with version 3, GTK uses CSS (Cascading Style Sheets) for styling and although it's a subset of the CSS3 standard so not everything is supported, you can use it to greatly improve the look of your applications.</p>
+
 	<span class="anchor" id="CSS"></span>
-            
 	<p><b>CSS</b> (Cascading Style Sheets), are used to style documents written in languages for web content creation such as HTML, XHTML, SVG, XUL, ect.
 	The current version is CSS3 and is maintained by the W3C, (World Wide Web Consortium)
 	</p>
+	
 	<blockquote>CSS is designed primarily to enable the separation of document content (written in HTML or a similar markup language) from document presentation,
 	including elements such as the layout, colors, and fonts.</blockquote>
-	</p>
+	
 	<p>
 	<a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">http://en.wikipedia.org/wiki/Cascading_Style_Sheets</a>
 	</p>		
@@ -176,10 +175,11 @@
 	<h4>Color Gradients</h4>     
 	<p>
 	Gtk also allows you to create a color gradient. A color gradient is color that progress from one color to another.
-	There are two types of color gradients: linear and radial. The syntax for linear gradient is:</p>
+	There are two types of color gradients: linear and radial. The syntax for linear gradient is:
+	</p>
 			
-	<pre  style="font-family:arial;font-size:12px;border:1px dashed #CCCCCC;width:99%;height:auto;overflow:auto;background:#f0f0f0;;background-image:URL(http://2.bp.blogspot.com/_z5ltvMQPaa8/SjJXr_U2YBI/AAAAAAAAAAM/46OqEP32CJ8/s320/codebg.gif);padding:0px;color:#000000;text-align:left;line-height:20px;"><code style="color:#000000;word-wrap:normal;">
-	-gtk-gradient (linear,&lt;br&gt;  
+	<pre  style="font-family:arial;font-size:12px;border:1px dashed #CCCCCC;width:99%;height:auto;overflow:auto;background:#f0f0f0;;background-image:URL(http://2.bp.blogspot.com/_z5ltvMQPaa8/SjJXr_U2YBI/AAAAAAAAAAM/46OqEP32CJ8/s320/codebg.gif);padding:0px;color:#000000;text-align:left;line-height:20px;">
+	<code style="color:#000000;word-wrap:normal;">	-gtk-gradient (linear,&lt;br&gt;  
         start_x start_y, end_x end_y,&lt;br&gt;
         color-stop (position, color),&lt;br&gt;
         ...)</code></pre>
