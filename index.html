@@ -243,8 +243,7 @@
   	right bottom,
   	from(@bg_color1),
   	to(@bg_color2));
-	}
-	</code></pre>	
+	}</code></pre>	
 			
 	<p>
 	The quickest, simplest way to get linear gradient color values is to use on-line tools that are available.
@@ -252,14 +251,18 @@
 	Copy and paste the Safari web browser version of the code it generates for you.
 	Then just change <code>background</code> to <code>background-image</code> then <code>-webkit-gradient</code> to <code>-gtk-gradient</code> and the percent values to decimal.
 	(See compatibility note for Unico in Ubuntu) For instance you should get something like this:
+	<pre style="font-family:arial;font-size:12px;
+	border:1px dashed #CCCCCC;width:99%;height:auto;overflow:auto;
+	background:#f0f0f0;;background-image:URL(http://2.bp.blogspot.com/_z5ltvMQPaa8/SjJXr_U2YBI/AAAAAAAAAAM/46OqEP32CJ8/s320/codebg.gif);
+	padding:0px;color:#000000;text-align:left;line-height:20px;">
+	<code style="color:#000000;word-wrap:normal;">background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(39%,#2989d8), color-stop(56%,#207cca), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ *</code></pre>
 	</p>
    
 	<pre style="font-family:arial;font-size:12px;
 	border:1px dashed #CCCCCC;width:99%;height:auto;overflow:auto;
 	background:#f0f0f0;;background-image:URL(http://2.bp.blogspot.com/_z5ltvMQPaa8/SjJXr_U2YBI/AAAAAAAAAAM/46OqEP32CJ8/s320/codebg.gif);
 	padding:0px;color:#000000;text-align:left;line-height:20px;">
-	<code style="color:#000000;word-wrap:normal;">	
-	@define-color bg_color1 rgb (255, 0, 0);
+	<code style="color:#000000;word-wrap:normal;">	@define-color bg_color1 rgb (255, 0, 0);
 	@define-color bg_color2 rgb (71, 71, 229);
 
 	GtkWindow {
@@ -268,8 +271,7 @@
                 	                 right bottom,
                         	         from(@bg_color1),
                                 	 to(@bg_color2));
-	}
-	</code></pre>  
+	}</code></pre>  
    
    <p>
       I won't go into radial gradients. To read about them and more linear gradient examples, See: <b>Gradients</b>
@@ -281,18 +283,15 @@
    
    <span class="anchor" id="mix"></span>
    
-<div class="CodeBox">
-<pre class="LineNumbers">
-1
-2
-3
-4</pre><pre class="Source">
-mix(color1, color2, f) /* A linear combination of color1 and color2, f is a floating point number between 0 and 1. */                       
-shade(color, f)        /* A lighter or darker variant of color, f is a floating point number */
-lighter(color)         /* A lighter variant of color */
-darker(color)          /* A darker variant of color*/ 
-</pre>
-</div>
+	<pre style="font-family:arial;font-size:12px;
+	border:1px dashed #CCCCCC;width:99%;height:auto;overflow:auto;
+	background:#f0f0f0;;background-image:URL(http://2.bp.blogspot.com/_z5ltvMQPaa8/SjJXr_U2YBI/AAAAAAAAAAM/46OqEP32CJ8/s320/codebg.gif);
+	padding:0px;color:#000000;text-align:left;line-height:20px;">
+	<code style="color:#000000;word-wrap:normal;"> 	mix(color1, color2, f) /* A linear combination of color1 and color2, f is a floating point number between 0 and 1. */
+	shade(color, f)        /* A lighter or darker variant of color, f is a floating point number  */
+	lighter(color)         /* A lighter variant of color */
+	darker(color)          /* A darker variant of color*/
+	</code></pre>
 
    <p><code>mix</code>: "f" is the brightness that I described previously, only in CSS for Gtk, it's a floating point number between 0.0 and 1.0.
    A value of 0.5 would be 50%, 0.6 would be 60%.</p>
