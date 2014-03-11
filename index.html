@@ -183,8 +183,8 @@
 	</p>
 			
 	<pre  style="font-family:arial;font-size:12px;border:1px dashed #CCCCCC;width:99%;height:auto;overflow:auto;background:#f0f0f0;;background-image:URL(http://2.bp.blogspot.com/_z5ltvMQPaa8/SjJXr_U2YBI/AAAAAAAAAAM/46OqEP32CJ8/s320/codebg.gif);padding:0px;color:#000000;text-align:left;line-height:20px;">
-	<code style="color:#000000;word-wrap:normal;">	-gtk-gradient (linear,&lt;br&gt;  
-        start_x start_y, end_x end_y,&lt;br&gt;
+	<code style="color:#000000;word-wrap:normal;">	-gtk-gradient (linear,&lt;br&gt; 
+	start_x start_y, end_x end_y,&lt;br&gt;
         color-stop (position, color),&lt;br&gt;
         ...)</code></pre>
 
@@ -208,8 +208,7 @@
 	border:1px dashed #CCCCCC;width:99%;height:auto;overflow:auto;
 	background:#f0f0f0;;background-image:URL(http://2.bp.blogspot.com/_z5ltvMQPaa8/SjJXr_U2YBI/AAAAAAAAAAM/46OqEP32CJ8/s320/codebg.gif);
 	padding:0px;color:#000000;text-align:left;line-height:20px;">
-	<code style="color:#000000;word-wrap:normal;">	
-	GtkWindow {
+	<code style="color:#000000;word-wrap:normal;">	GtkWindow {
 	background-image: -gtk-gradient (linear,
                                  	center top, center bottom,
                                  	color-stop(0.5,green),
@@ -235,8 +234,7 @@
 	border:1px dashed #CCCCCC;width:99%;height:auto;overflow:auto;
 	background:#f0f0f0;;background-image:URL(http://2.bp.blogspot.com/_z5ltvMQPaa8/SjJXr_U2YBI/AAAAAAAAAAM/46OqEP32CJ8/s320/codebg.gif);
 	padding:0px;color:#000000;text-align:left;line-height:20px;">
-	<code style="color:#000000;word-wrap:normal;">	
-	@define-color bg_color1 rgb (255, 0, 0);
+	<code style="color:#000000;word-wrap:normal;">	@define-color bg_color1 rgb (255, 0, 0);
 	@define-color bg_color2 rgb (71, 71, 229);
 
 	GtkWindow {
@@ -256,25 +254,22 @@
 	(See compatibility note for Unico in Ubuntu) For instance you should get something like this:
 	</p>
    
-<div class="CodeBox">
-<pre class="LineNumbers">
-1
-2
-3
-4
-5
-6
-7
-</pre><pre class="Source">
-background: -webkit-gradient (linear,
-   left top,
-   left bottom,
-   color-stop(0%,#1e5799),
-   color-stop(39%,#2989d8),
-   color-stop(56%,#207cca),
-   color-stop(100%,#7db9e8)); /* Chrome,Safari4+  
-</pre>
-</div>   
+	<pre style="font-family:arial;font-size:12px;
+	border:1px dashed #CCCCCC;width:99%;height:auto;overflow:auto;
+	background:#f0f0f0;;background-image:URL(http://2.bp.blogspot.com/_z5ltvMQPaa8/SjJXr_U2YBI/AAAAAAAAAAM/46OqEP32CJ8/s320/codebg.gif);
+	padding:0px;color:#000000;text-align:left;line-height:20px;">
+	<code style="color:#000000;word-wrap:normal;">	
+	@define-color bg_color1 rgb (255, 0, 0);
+	@define-color bg_color2 rgb (71, 71, 229);
+
+	GtkWindow {
+  	background-image: -gtk-gradient (linear,
+        	                         left top,
+                	                 right bottom,
+                        	         from(@bg_color1),
+                                	 to(@bg_color2));
+	}
+	</code></pre>  
    
    <p>
       I won't go into radial gradients. To read about them and more linear gradient examples, See: <b>Gradients</b>
