@@ -418,6 +418,69 @@
      There's an example of the <code>focus-line-width</code> in the sample code below and a example of <code>cursor-color</code> in the GtkTextView tutorial I've posted.
   </p> 
   
+  <p>
+  <b>CODE NOTES</b>
+    Here's an example of changing the background color of a window using internal CSS in Gtk3. I'm using Gtk+-3.2.3 on Ubuntu 11.04 (Natty Narwhal). I've defined the background color using 5 different color units just for illustration. Each statement overrides the previous one, so the end result is the same, a blue background is produced. You could delete any 4 of the 5 and still get a blue background. After the code are a few good references.
+  </p>
+  
+  <pre style="font-family:arial;font-size:12px;
+border:1px dashed #CCCCCC;width:99%;height:auto;overflow:auto;
+background:#f0f0f0;;background-image:URL(http://2.bp.blogspot.com/_z5ltvMQPaa8/SjJXr_U2YBI/AAAAAAAAAAM/46OqEP32CJ8/s320/codebg.gif);
+padding:0px;color:#000000;text-align:left;line-height:20px;">
+<code style="color:#000000;word-wrap:normal;">/* Compile with: 
+*       gcc -Wall -o csswindow `pkg-config --cflags --libs gtk+-3.0` csswindow.c                           
+*/
+#include <gtk/gtk.h>
+
+int main (int argc, char *argv[])
+{
+  GtkWidget *window;
+/*--- CSS -----------------*/
+  GtkCssProvider *provider;
+  GdkDisplay *display;
+  GdkScreen *screen;
+/*-------------------------*/
+  gtk_init (&argc, &argv);
+
+  window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+
+  gtk_window_set_default_size (GTK_WINDOW(window),
+                               500, 300);
+
+  g_signal_connect (GTK_WIDGET(window),
+                    "destroy",
+                    G_CALLBACK (gtk_main_quit),
+                    NULL);
+
+/*------  CSS  ---------------------------------------------------------------------------------------------------------------*/
+  provider = gtk_css_provider_new ();
+  display = gdk_display_get_default ();
+  screen = gdk_display_get_default_screen (display);
+
+  gtk_style_context_add_provider_for_screen (screen,
+                                 GTK_STYLE_PROVIDER (provider),
+                                 GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+  gtk_css_provider_load_from_data (GTK_CSS_PROVIDER(provider),
+                                   " GtkWindow {\n"
+                                   "   -GtkWidget-focus-line-width: 0;\n"
+                                   "   -GtkWindow-resize-grip-height: 0;\n"    /* not guaranteed, can be overridden by window manger */
+                                   "   -GtkWindow-resize-grip-width: 0;\n"     /* not guaranteed, can be overridden by window manger */                       
+                                   "   background-color: blue;\n"              /* named color units */
+                                   "   background-color: rgb (0, 0, 255);\n"   /* rgb color units, overrides the previous "background-color" assignment */
+                                   "   background-color: rgba (0,0,255,1);\n"  /* rgba color units, overrides the previous "background-color" assignment */
+                                   "   background-color: #0000FF;\n"           /* hexadecimal color units, overrides the previous "background-color" assignment */
+                                   "   background-color: shade(blue, 1.0);\n"  /* overrides previous color assignment */   
+                                   "}\n", -1, NULL);
+  g_object_unref (provider);
+/*----------------------------------------------------------------------------------------------------------------------------*/
+
+  gtk_widget_show_all (window);
+  gtk_main ();
+return (0);
+}</code></pre>
+
+
   <div id="section_divider"></div>
   
   <span class="anchor" id="References"></span>
