@@ -204,20 +204,16 @@
 	(for Unico on Ubuntu, See the section: <a href="#Compatibility Notes">Compatibility Notes</a>)	   
 	</p>	
 	   
-<pre><span style="font-style:normal;color:#cccccc;background-color:#ffffff;"> 1: </span>gtk_css_provider_load_from_data <font color="BLUE" size="+1"><b>(</b></font>provider<font color="BLUE" size="+1"><b>,</b></font>
-<span style="font-style:normal;color:#eeeeee;background-color:#ffffff;"> 2: </span>                                 <font color="PURPLE">"GtkTextView {\n"</font>
-<span style="font-style:normal;color:#eeeeee;background-color:#ffffff;"> 3: </span>                                 <font color="PURPLE">"color: blue;\n"</font>
-<span style="font-style:normal;color:#eeeeee;background-color:#ffffff;"> 4: </span>                                 <font color="PURPLE">"font: Serif 38;\n"</font>
-<span style="font-style:normal;color:#cccccc;background-color:#ffffff;"> 5: </span>                                 <font color="PURPLE">"background-color: yellow;\n"</font>
-<span style="font-style:normal;color:#eeeeee;background-color:#ffffff;"> 6: </span>                                 <font color="PURPLE">"-GtkWidget-cursor-color: red;\n"</font>
-<span style="font-style:normal;color:#eeeeee;background-color:#ffffff;"> 7: </span>                                 <font color="PURPLE">"}\n"</font>
-<span style="font-style:normal;color:#eeeeee;background-color:#ffffff;"> 8: </span>                                 <font color="PURPLE">"GtkTextView:selected {\n"</font>
-<span style="font-style:normal;color:#eeeeee;background-color:#ffffff;"> 9: </span>                                 <font color="PURPLE">"background-color: black;\n"</font>
-<span style="font-style:normal;color:#cccccc;background-color:#ffffff;">10: </span>                                 <font color="PURPLE">"color: green;\n"</font>
-<span style="font-style:normal;color:#eeeeee;background-color:#ffffff;">11: </span>                                 <font color="PURPLE">"}\n"</font><font color="BLUE" size="+1"><b>,</b></font> <font color="BLUE" size="+1">-</font><font color="BROWN">1</font><font color="BLUE" size="+1"><b>,</b></font> NULL<font color="BLUE" size="+1"><b>)</b></font><font color="BLUE" size="+1"><b>;</b></font>
-</pre>
+	<code style="color:#000000;word-wrap:normal;">   
+	GtkWindow {
+	background-image: -gtk-gradient (linear,
+                                 	center top, center bottom,
+                                 	color-stop(0.5,green),
+                                 	color-stop(0.5,blue),   
+	}
+	</code></pre>
 		
-	p>You would get:<br>
+	<p>You would get:<br>
 	<img src="/files/theme/50_50.png" alt="top 50% green, bottom 50% blue">
 	</p>   
    
